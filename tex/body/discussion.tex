@@ -9,9 +9,12 @@
 % ****************************************************************************************
 \chapter{Discussion}
 \label{chapter:discussion}
-\blindtext
+The uncontrolled converter shows a significant overshoot and oscillation before settling to the working point at startup. The controlled converter shows a much smoother startup behaviour, but the settling time is longer than for the uncontrolled converter as shown in \autoref{fig:comparison_startup}.
 
+The load-jump behaviour of the controlled converter still shows a spike at the load-jump, but quickly settles to the working point as can be seen in \autoref{fig:comparison_load_jump}, whereas the uncontrolled converter delivers a higher unwanted constant ouput voltage after the jump.
 
+The input noise feedthrough of the controlled converter is significantly reduced, although not completely eliminated, compared to the uncontrolled converter as can be seen in \autoref{fig:comparison_input_noise_feedthrough}.
 
+Overall, the behavioural characteristics of the converter have improved with the addition of the \Gls{acr:pid}-Controller.
 
 % EOF

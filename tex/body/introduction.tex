@@ -10,7 +10,37 @@
 \chapter{Introduction}
 \label{chapter:introduction}
 
-\blindtext
+A \gls{acr:pid} controller for a \qty{12}{\volt} to \qty{5}{\volt} Buck-Converter is to be designed and tested using PLECS \autocite{PLECSPlexim}.
+
+The passive components of the Buck-Converter are chosen as :
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{c|c}
+        Component & Value \\ \hline
+        $L$ & \qty{20}{\micro\henry} \\ 
+        $C$ & \qty{50}{\micro\farad} \\ 
+        $R$ & \qty{5}{\ohm} \\ 
+    \end{tabular}
+    \caption{Passive components of the Buck-Converter}
+    \label{tab:components}
+\end{table}
+
+The Controller is designed according to \autocite{samosirSimpleFormulaDesigning2023} and thus yields:
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{c|c}
+        Parameter & Value \\ \hline
+        $K_D$ & $50 LC$ \\ 
+        $K_P$ & $50 \frac{L}{R}$ \\ 
+        $K_I$ & $50$ \\ 
+    \end{tabular}
+    \caption{PID Controller Parameters}
+    \label{tab:pid_parameters}
+\end{table}
+
+
 
 
 % EOF
