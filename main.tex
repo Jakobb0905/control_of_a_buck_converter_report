@@ -1,0 +1,57 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+% !TEX root = main.tex
+% !TEX spellcheck = en-US
+% ****************************************************************************************
+% File: main.tex
+% Author: Jakob Spindler
+% Date: 2024-10-16
+% ****************************************************************************************
+\documentclass[a4paper,11pt,oneside,final,titlepage,openany,onecolumn]{report}
+% input preamble (include additional packages, set options, define macros)
+\input{./tex/_/_preamble.tex}
+\loadglsentries{./tex/_/_defns.tex}
+\makeglossaries
+\begin{document}
+	\pagenumbering{alph}
+	\include{tex/pre/titlepage_fancy}
+	\pagenumbering{Roman}
+	\pdfbookmark[0]{\contentsname}{toc} % sets a PDF bookmark
+ 
+    \tableofcontents
+	\newcounter{romanpagecount}
+	\setcounter{romanpagecount}{\value{page}}
+	\clearpage
+	\pagenumbering{arabic}
+
+	% add content here
+    
+    
+
+	\include{tex/body/introduction}
+	\include{tex/body/methods}
+    \include{tex/body/results}
+    \include{tex/body/discussion}
+
+	\pagenumbering{Roman}
+	\setcounter{page}{\value{romanpagecount}}
+	\stepcounter{page}
+	\printbibliography[heading=bibintoc] % This will add the bibliography to the table of contents
+    
+	%\addcontentsline{toc}{chapter}{\bibname}
+	\listoffigures
+	\addcontentsline{toc}{chapter}{\listfigurename}
+	\listoftables
+	\addcontentsline{toc}{chapter}{\listtablename}
+	
+ 
+	\clearpage
+	\printglossary[type=\acronymtype] % input files created by makeindex
+	\printglossary[type=symbolslist,style=symbolsliststyle] % input files created by makeindex
+
+	\appendix
+	\include{./tex/aft/appendix.tex}
+
+
+\end{document}
+% EOF
