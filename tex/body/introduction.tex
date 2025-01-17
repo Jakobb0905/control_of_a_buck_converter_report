@@ -10,7 +10,7 @@
 \chapter{Introduction}
 \label{chapter:introduction}
 
-A \gls{acr:pid} controller for a \qty{12}{\volt} to \qty{5}{\volt} Buck-Converter is to be designed and tested using PLECS \autocite{PLECSPlexim}.
+A discrete \gls{acr:pid} controller for a \qty{12}{\volt} to \qty{5}{\volt} Buck-Converter is to be designed and tested using PLECS \autocite{PLECSPlexim}.
 
 The passive components of the Buck-Converter are chosen as :
 
@@ -26,7 +26,7 @@ The passive components of the Buck-Converter are chosen as :
     \label{tab:components}
 \end{table}
 
-The Controller is designed according to \autocite{samosirSimpleFormulaDesigning2023} and thus yields:
+A continous controller can be designed according to \autocite{samosirSimpleFormulaDesigning2023} and thus yields:
 
 \begin{table}[htbp]
     \centering
@@ -36,8 +36,22 @@ The Controller is designed according to \autocite{samosirSimpleFormulaDesigning2
         $K_P$ & $50 \frac{L}{R}$ \\ 
         $K_I$ & $50$ \\ 
     \end{tabular}
-    \caption{PID Controller Parameters}
+    \caption{Initial PID Controller Parameters}
     \label{tab:pid_parameters}
+\end{table}
+
+The parameters were adjusted imperically for a sampling time of \qty{1}{\milli\second} to yield a stable and fast responding system and can be found in \autoref{tab:final_pid_parameters}.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{c|c}
+        Parameter & Value \\ \hline
+        $K_D$ & $50 LC$ \\ 
+        $K_P$ & $\frac{L}{R}$ \\ 
+        $K_I$ & $20$ \\ 
+    \end{tabular}
+    \caption{Final PID Controller Parameters}
+    \label{tab:final_pid_parameters}
 \end{table}
 
 
