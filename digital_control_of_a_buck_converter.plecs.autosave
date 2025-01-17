@@ -277,11 +277,11 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [269, 120; 1276, 631]
+      Location      [374, 94; 1381, 625]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAAAAAAAAPw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABfAP///wAABOsAAAJgAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABfAP///wAABOsAAAJ5AAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
@@ -296,7 +296,7 @@ Plecs {
       TimeRange     "0.0"
       ScrollingMode "1"
       SingleTimeAxis "1"
-      Open          "0"
+      Open          "1"
       Ts            "-1"
       SampleLimit   "0"
       XAxisLabel    "Time / s"
@@ -632,7 +632,7 @@ Plecs {
       }
       Schematic {
         Location      [0, 26; 1539, 832]
-        ZoomFactor    2.57013
+        ZoomFactor    2.2459
         SliderPosition [0, 0]
         ShowBrowser   off
         BrowserWidth  100
@@ -1164,7 +1164,7 @@ Plecs {
       LabelPosition west
       Parameter {
         Variable      "SwitchState"
-        Value         "2"
+        Value         "1"
         Show          off
       }
     }
@@ -1210,7 +1210,7 @@ Plecs {
         Direction     right
       }
       Schematic {
-        Location      [1400, 456; 2049, 781]
+        Location      [887, 456; 1536, 781]
         ZoomFactor    1.71498
         SliderPosition [0, 0]
         ShowBrowser   off
