@@ -12,21 +12,40 @@
 
 A discrete \gls{acr:pid} controller for a \qty{12}{\volt} to \qty{5}{\volt} Buck-Converter is to be designed and tested using PLECS \autocite{PLECSPlexim}.
 
-The passive components of the Buck-Converter are chosen as :
+The self-imposed charcteristics of the buck converter and the chosen passive components according to \autocite{BuckConverter} are given in \autoref{tab:converter_characteristics} and \autoref{tab:components} respectively.
 
 \begin{table}[htbp]
     \centering
-    \begin{tabular}{c|c}
-        Component & Value \\ \hline
-        $L$ & \qty{20}{\micro\henry} \\ 
-        $C$ & \qty{50}{\micro\farad} \\ 
-        $R$ & \qty{5}{\ohm} \\ 
-    \end{tabular}
-    \caption{Passive components of the Buck-Converter}
-    \label{tab:components}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \begin{tabular}{c|c}
+            Parameter & Value \\ \hline
+            $V_{\text{in,nominal}}$ & \qty{12}{\volt} \\ 
+            $V_{\text{in,min}}$ & \qty{8}{\volt} \\
+            $V_{\text{in,max}}$ & \qty{16}{\volt} \\  
+            $V_{\text{out}}$ & \qty{5}{\volt} \\ 
+            $I_{\text{out}}$ & \qty{1}{\ampere} \\
+            $\Delta I_{\text{L}}$ at $V_{\text{in,max}}$ & \qty{400}{\milli\ampere} \\
+            $f_{\text{sw}}$ & \qty{50}{\kilo\hertz}
+        \end{tabular}
+        \caption{Buck-Converter Characteristics}
+        \label{tab:converter_characteristics}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \begin{tabular}{c|c}
+            Component & Value \\ \hline
+            $L$ & \qty{200}{\micro\henry} \\ 
+            $C$ & \qty{50}{\micro\farad} \\ 
+            $R$ & \qty{5}{\ohm} \\ 
+             \\
+        \end{tabular}
+        \caption{Passive components \\ of the Buck-Converter}
+        \label{tab:components}
+    \end{minipage}
 \end{table}
 
-A continous controller can be designed according to \autocite{samosirSimpleFormulaDesigning2023} and thus yields:
+A continous controller can be designed according to \autocite{samosirSimpleFormulaDesigning2023} -- for simplicity, the parameters were kept the same for the discrete controller
 
 \begin{table}[htbp]
     \centering
@@ -36,25 +55,9 @@ A continous controller can be designed according to \autocite{samosirSimpleFormu
         $K_P$ & $50 \frac{L}{R}$ \\ 
         $K_I$ & $50$ \\ 
     \end{tabular}
-    \caption{Initial PID Controller Parameters}
+    \caption{PID Controller Parameters}
     \label{tab:pid_parameters}
 \end{table}
-
-The parameters were adjusted imperically for a sampling time of \qty{1}{\milli\second} to yield a stable and fast responding system and can be found in \autoref{tab:final_pid_parameters}.
-
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{c|c}
-        Parameter & Value \\ \hline
-        $K_D$ & $50 LC$ \\ 
-        $K_P$ & $\frac{L}{R}$ \\ 
-        $K_I$ & $20$ \\ 
-    \end{tabular}
-    \caption{Final PID Controller Parameters}
-    \label{tab:final_pid_parameters}
-\end{table}
-
-
 
 
 % EOF

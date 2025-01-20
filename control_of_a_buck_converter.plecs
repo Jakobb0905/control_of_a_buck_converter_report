@@ -1,6 +1,6 @@
 Plecs {
   Name          "control_of_a_buck_converter"
-  Version       "4.9"
+  Version       "4.8"
   CircuitModel  "ContStateSpace"
   StartTime     "0.0"
   TimeSpan      "1.0"
@@ -53,7 +53,7 @@ Plecs {
   ScriptsDialogGeometry "[1514 565 446 244]"
   ScriptsDialogSplitterPos "100"
   Schematic {
-    Location      [2135, 31; 3439, 1348]
+    Location      [232, 26; 1536, 832]
     ZoomFactor    1.49863
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -216,11 +216,6 @@ Plecs {
         Value         "1"
         Show          off
       }
-      Parameter {
-        Variable      "NoMatchingCounterpartAction"
-        Value         "2"
-        Show          off
-      }
     }
     Component {
       Type          From
@@ -237,11 +232,6 @@ Plecs {
       }
       Parameter {
         Variable      "Visibility"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "NoMatchingCounterpartAction"
         Value         "1"
         Show          off
       }
@@ -287,16 +277,20 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [673, 283; 1783, 953]
+      Location      [362, 70; 1472, 756]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
-"G0AQQByAGUAYQAAAAAA/////wAAADYA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
-"///wAAAGgA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABoAP///wAAAAMAAAAAAAAAAPw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABSAP///wAABFYAAAKDAAAA"
+"G0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAAAAAAAAPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABfAP///wAABWwAAAM7AAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":177,\"Labels\":[],"
-"\"VisualIdxs\":[]}"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
+"gAAAH0AAAAHAAAAfQAAAAgAAAB9AAAACQAAAH0AAAABAAAAfQAAAAIAAAB9AAAAAwAAAH0AAAAEAA"
+"AAfQAAAAUAAAB9AAAA9QAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADKAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AArAAAAAQAAAAAAAAPoAAAAACs="
       PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
       Axes          "1"
       TimeRange     "0.0"
@@ -375,7 +369,7 @@ Plecs {
       LabelPosition south
       Parameter {
         Variable      "SwitchState"
-        Value         "1"
+        Value         "2"
         Show          off
       }
     }
@@ -489,12 +483,12 @@ Plecs {
       LabelPosition south
       Parameter {
         Variable      "Hi"
-        Value         "10"
+        Value         "5"
         Show          off
       }
       Parameter {
         Variable      "Lo"
-        Value         "5"
+        Value         "10"
         Show          off
       }
       Parameter {
@@ -526,16 +520,20 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [1400, 456; 1750, 710]
+      Location      [1186, 456; 1536, 714]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
-"G0AQQByAGUAYQAAAAAA/////wAAADYA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
-"///wAAAGgA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABoAP///wAAAAMAAAAAAAAAAPw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABSAP///wAAAV4AAADjAAAA"
+"G0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAAAAAAAAPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABfAP///wAAAbYAAAEkAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":138,\"Labels\":[],"
-"\"VisualIdxs\":[]}"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
+"gAAAH0AAAAHAAAAfQAAAAgAAAB9AAAACQAAAH0AAAABAAAAfQAAAAIAAAB9AAAAAwAAAH0AAAAEAA"
+"AAfQAAAAUAAAB9AAAAygAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAACfAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AArAAAAAQAAAAAAAAPoAAAAACs="
       PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
       Axes          "1"
       TimeRange     "0.0"
@@ -633,9 +631,9 @@ Plecs {
         Direction     left
       }
       Schematic {
-        Location      [0, 27; 3440, 1353]
+        Location      [0, 26; 1539, 832]
         ZoomFactor    2.94117
-        SliderPosition [0, 0]
+        SliderPosition [0, 17]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -700,8 +698,7 @@ Plecs {
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":202,\"Labels\""
-":[],\"VisualIdxs\":[]}"
+          HeaderState   "DefaultSecSize0FirstSecSize202LabelsVisualIdxg=="
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           Axes          "1"
           TimeRange     "0.0"
@@ -786,8 +783,7 @@ Plecs {
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":88,\"Labels\":"
-"[],\"VisualIdxs\":[]}"
+          HeaderState   "DefaultSecSize0FirstSecSize88LabelsVisualIdx"
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           Axes          "1"
           TimeRange     "0.0"
@@ -850,7 +846,7 @@ Plecs {
           }
           Parameter {
             Variable      "kp"
-            Value         "50*4e-6"
+            Value         "50*40e-6"
             Show          on
           }
           Parameter {
@@ -860,7 +856,7 @@ Plecs {
           }
           Parameter {
             Variable      "kd"
-            Value         "50*1e-9"
+            Value         "50*10e-9"
             Show          on
           }
           Parameter {
@@ -990,8 +986,7 @@ Plecs {
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":162,\"Labels\""
-":[],\"VisualIdxs\":[]}"
+          HeaderState   "DefaultSecSize0FirstSecSize162LabelsVisualIdxg=="
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           Axes          "1"
           TimeRange     "0.0"
@@ -1124,7 +1119,6 @@ Plecs {
           SrcTerminal   1
           Points        [360, 185]
           Branch {
-            Points        [360, 185; 445, 185]
             DstComponent  "D"
             DstTerminal   1
           }
@@ -1138,7 +1132,6 @@ Plecs {
           Type          Signal
           SrcComponent  "v_ref"
           SrcTerminal   1
-          Points        [50, 185]
           DstComponent  "Sum"
           DstTerminal   3
         }
@@ -1146,7 +1139,7 @@ Plecs {
           Type          Signal
           SrcComponent  "v_out"
           SrcTerminal   1
-          Points        [50, 135; 75, 135; 75, 160]
+          Points        [75, 135]
           DstComponent  "Sum"
           DstTerminal   2
         }
@@ -1162,7 +1155,7 @@ Plecs {
       LabelPosition west
       Parameter {
         Variable      "SwitchState"
-        Value         "1"
+        Value         "2"
         Show          off
       }
     }
@@ -1257,16 +1250,20 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
-          Location      [1525, 613; 2149, 1009]
+          Location      [912, 468; 1536, 868]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
-"wBvAG0AQQByAGUAYQAAAAAA/////wAAADYA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
-"AA/////wAAAGgA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABoAP///wAAAAMAAAMAAAA"
-"AdfwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAAwAAAABSAP///wAAAnAAAAFx"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAMAAAA"
+"AdfwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAAwAAAABfAP///wAAAwwAAAHV"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":126,\"Labels\""
-":[\"Delta\"],\"VisualIdxs\":[3]}"
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAABgAAAH0AAAAHAAAAfQAAAAgAAAB9AAAACQAAAH0AAAABAAAAfQAAAAIAAAB9AAAAAwAAAH0AAA"
+"AEAAAAfQAAAAUAAAB9AAAAugAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAAC"
+"PAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAArAAAAAQAAAAAAAAPoAAAAACs="
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           Axes          "1"
           TimeRange     "0.0"

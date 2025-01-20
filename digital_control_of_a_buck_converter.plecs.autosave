@@ -53,8 +53,8 @@ Plecs {
   ScriptsDialogGeometry "[1514 565 446 244]"
   ScriptsDialogSplitterPos "100"
   Schematic {
-    Location      [232, 26; 1536, 832]
-    ZoomFactor    1.49863
+    Location      [0, 26; 1536, 780]
+    ZoomFactor    1.71498
     SliderPosition [0, 0]
     ShowBrowser   off
     BrowserWidth  100
@@ -106,13 +106,13 @@ Plecs {
       Type          Inductor
       Name          "L"
       Show          on
-      Position      [450, 295]
+      Position      [440, 295]
       Direction     left
       Flipped       off
       LabelPosition north
       Parameter {
         Variable      "L"
-        Value         "20e-6"
+        Value         "200e-6"
         Show          on
       }
       Parameter {
@@ -202,7 +202,7 @@ Plecs {
       Type          Goto
       Name          "Goto"
       Show          off
-      Position      [790, 395]
+      Position      [780, 360]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -273,21 +273,21 @@ Plecs {
       Type          Scope
       Name          "scope_I_and_V"
       Show          on
-      Position      [750, 290]
+      Position      [760, 285]
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [374, 94; 1381, 625]
+      Location      [368, 141; 1375, 768]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAAAAAAAAPw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABfAP///wAABOsAAAJ5AAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABfAP///wAABOsAAALxAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
       HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"AAAAH0AAAAFAAAAfQAAAAYAAAB9AAAABwAAAH0AAAABAAAAfQAAAAIAAAB9AAAAAwAAAH0AAAAIAA"
-"AAfQAAAAkAAAB9AAAA9QAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADKAAA"
+"gAAAH0AAAAHAAAAfQAAAAgAAAB9AAAACQAAAH0AAAABAAAAfQAAAAIAAAB9AAAAAwAAAH0AAAAEAA"
+"AAfQAAAAUAAAB9AAAA9QAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADKAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AArAAAAAQAAAAAAAAPoAAAAACs="
@@ -369,7 +369,7 @@ Plecs {
       LabelPosition south
       Parameter {
         Variable      "SwitchState"
-        Value         "2"
+        Value         "1"
         Show          off
       }
     }
@@ -632,7 +632,7 @@ Plecs {
       }
       Schematic {
         Location      [0, 26; 1539, 832]
-        ZoomFactor    2.2459
+        ZoomFactor    1.71499
         SliderPosition [0, 0]
         ShowBrowser   off
         BrowserWidth  100
@@ -653,7 +653,7 @@ Plecs {
           }
           Parameter {
             Variable      "fc"
-            Value         "100000"
+            Value         "50000"
             Show          on
           }
           Parameter {
@@ -941,7 +941,7 @@ Plecs {
           SrcComponent  "Components/Control/Discrete/Discrete PID\\nController"
           Name          "Discrete PID\nController"
           Show          on
-          Position      [190, 185]
+          Position      [165, 185]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -958,17 +958,17 @@ Plecs {
           }
           Parameter {
             Variable      "kp"
-            Value         "4e-6"
+            Value         "2e-3"
             Show          on
           }
           Parameter {
             Variable      "ki"
-            Value         "20"
+            Value         "50"
             Show          on
           }
           Parameter {
             Variable      "kd"
-            Value         "50*1e-9"
+            Value         "500*1e-9"
             Show          on
           }
           Parameter {
@@ -1008,7 +1008,7 @@ Plecs {
           }
           Parameter {
             Variable      "t_sample"
-            Value         "1e-3"
+            Value         "2e-6"
             Show          on
           }
           Parameter {
@@ -1094,36 +1094,6 @@ Plecs {
         }
         Connection {
           Type          Signal
-          SrcComponent  "Discrete PID\nController"
-          SrcTerminal   2
-          Points        [250, 185]
-          Branch {
-            DstComponent  "Symmetrical PWM"
-            DstTerminal   2
-          }
-          Branch {
-            Points        [250, 105]
-            DstComponent  "scope_duty cycle"
-            DstTerminal   1
-          }
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Sum"
-          SrcTerminal   1
-          Points        [100, 185]
-          Branch {
-            DstComponent  "Discrete PID\nController"
-            DstTerminal   1
-          }
-          Branch {
-            Points        [100, 105]
-            DstComponent  "scope_error"
-            DstTerminal   1
-          }
-        }
-        Connection {
-          Type          Signal
           SrcComponent  "Symmetrical PWM"
           SrcTerminal   1
           Points        [360, 185]
@@ -1151,6 +1121,36 @@ Plecs {
           Points        [75, 135]
           DstComponent  "Sum"
           DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Sum"
+          SrcTerminal   1
+          Points        [100, 185]
+          Branch {
+            Points        [100, 105]
+            DstComponent  "scope_error"
+            DstTerminal   1
+          }
+          Branch {
+            DstComponent  "Discrete PID\nController"
+            DstTerminal   1
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Discrete PID\nController"
+          SrcTerminal   2
+          Points        [250, 185]
+          Branch {
+            DstComponent  "Symmetrical PWM"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [250, 105]
+            DstComponent  "scope_duty cycle"
+            DstTerminal   1
+          }
         }
       }
     }
@@ -1210,7 +1210,7 @@ Plecs {
         Direction     right
       }
       Schematic {
-        Location      [887, 456; 1536, 781]
+        Location      [887, 456; 1536, 780]
         ZoomFactor    1.71498
         SliderPosition [0, 0]
         ShowBrowser   off
@@ -1396,7 +1396,7 @@ Plecs {
       }
       Parameter {
         Variable      "fc"
-        Value         "100000"
+        Value         "50000"
         Show          off
       }
       Parameter {
@@ -1429,15 +1429,85 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold"
       Show          on
-      Position      [740, 395]
+      Position      [730, 360]
       Direction     right
       Flipped       off
       LabelPosition south
       Parameter {
         Variable      "Ts"
-        Value         "1e-3"
+        Value         "2e-6"
         Show          on
       }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope_I_ripple"
+      Show          on
+      Position      [760, 235]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 26; 1536, 807]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAAAAAAAAPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABfAP///wAAB4AAAAOxAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
+"gAAAH0AAAAHAAAAfQAAAAgAAAB9AAAACQAAAH0AAAABAAAAfQAAAAIAAAB9AAAAAwAAAH0AAAAEAA"
+"AAfQAAAAUAAAB9AAAA+gAAAAsBAAABAAAAAAAAAAAAAAAAff////8AAACBAAAAAAAAAAsAAADPAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AArAAAAAQAAAAAAAAPoAAAAACs="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    "Time / s"
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency / Hz"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          Ammeter
+      Name          "Am1"
+      Show          on
+      Position      [485, 295]
+      Direction     left
+      Flipped       off
+      LabelPosition south
     }
     Connection {
       Type          Wire
@@ -1492,24 +1562,23 @@ Plecs {
     }
     Connection {
       Type          Wire
-      SrcComponent  "L"
-      SrcTerminal   2
-      Points        [510, 295]
+      SrcComponent  "Vm"
+      SrcTerminal   1
+      Points        [635, 260; 585, 260]
       Branch {
-        DstComponent  "C"
-        DstTerminal   1
+        Points        [510, 260; 510, 295]
+        Branch {
+          DstComponent  "C"
+          DstTerminal   1
+        }
+        Branch {
+          DstComponent  "Am1"
+          DstTerminal   2
+        }
       }
       Branch {
-        Points        [510, 260; 585, 260]
-        Branch {
-          Points        [635, 260]
-          DstComponent  "Vm"
-          DstTerminal   1
-        }
-        Branch {
-          DstComponent  "Am"
-          DstTerminal   1
-        }
+        DstComponent  "Am"
+        DstTerminal   1
       }
     }
     Connection {
@@ -1529,7 +1598,7 @@ Plecs {
         DstTerminal   3
       }
       Branch {
-        Points        [695, 395]
+        Points        [695, 360]
         DstComponent  "Zero-Order\nHold"
         DstTerminal   1
       }
@@ -1595,20 +1664,6 @@ Plecs {
     }
     Connection {
       Type          Signal
-      SrcComponent  "5 -> 10 at 0.5s"
-      SrcTerminal   1
-      Points        [550, 100]
-      Branch {
-        DstComponent  "scope_R"
-        DstTerminal   1
-      }
-      Branch {
-        DstComponent  "switch_R"
-        DstTerminal   2
-      }
-    }
-    Connection {
-      Type          Signal
       SrcComponent  "switch_R"
       SrcTerminal   1
       Points        [545, 320]
@@ -1658,6 +1713,35 @@ Plecs {
       SrcTerminal   2
       DstComponent  "Goto"
       DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Am1"
+      SrcTerminal   1
+      DstComponent  "L"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Am1"
+      SrcTerminal   3
+      Points        [485, 235]
+      DstComponent  "Scope_I_ripple"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "5 -> 10 at 0.5s"
+      SrcTerminal   1
+      Points        [550, 100]
+      Branch {
+        DstComponent  "scope_R"
+        DstTerminal   1
+      }
+      Branch {
+        DstComponent  "switch_R"
+        DstTerminal   2
+      }
     }
     Annotation {
       Name          "<html><body>\n<p>simulation time: 1s</p></body></html>"
